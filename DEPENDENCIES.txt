@@ -1,0 +1,24 @@
+DEPENDENCIES
+
+npm install @supabase/supabase-js
+npm install @rneui/themed @react-native-async-storage/async-storage
+npm install aes-js react-native-get-random-values
+npm install --save-dev @types/aes-js
+npm install native-wind
+npm install tailwindcss
+npm install expo-router
+npx expo install expo-secure-store
+npx tailwindcss init
+touch babel.config.js
+npm install react-native-css-interop
+
+
+npm install nativewind@latest react-native-svg@latest
+npm uninstall tailwindcss
+npm install tailwindcss@3.3.2 --save-dev
+npm install @react-navigation/native @react-navigation/bottom-tabs
+npm install react-native-dotenv@latest --save-dev
+npx expo install expo-image-picker
+npx expo install react-native-screens react-native-safe-area-context
+npm install @react-native-community/datetimepicker
+npm install react-native-date-picker

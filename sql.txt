@@ -1,0 +1,32 @@
+create table if not exists users (
+    id serial primary key,
+    auth_uid uuid references auth.users(id) on delete cascade,
+    name varchar not null,
+    email varchar unique not null,
+    avatar_url text,
+    is_active boolean,
+    created_at timestamp with time zone default timezone('utc'::text, now())
+);
+
+create table if not exists user_settings (
+    auth_uid uuid primary key references auth.users(id) on delete cascade,
+    push_notifications boolean default true,
+    two_factor_auth boolean,
+    dark_mode boolean
+);
+
+//WAG NA TO PANSININ PARA SANA TOH SA IMAGE
+create policy "Public upload" on storage.objects
+for insert
+with check (
+  bucket_id = 'avatars'
+);
+
+create policy "Public read" on storage.objects
+for select
+using (
+  bucket_id = 'avatars'
+);
+
+-- with check (auth.uid() is not null and bucket_id = 'avatars')
+-- using (auth.uid() is not null and bucket_id = 'avatars')
