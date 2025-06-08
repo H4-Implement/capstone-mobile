@@ -1,0 +1,17 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "types": [
+      "nativewind/types"
+    ]
+  },
+  "include": [
+    "index.tsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "global.d.ts",
+    "src/components/ProfileSubScreen",
+    "nativewind-env.d.ts"
+  ]
+}
